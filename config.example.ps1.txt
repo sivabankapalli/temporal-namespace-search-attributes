@@ -1,0 +1,16 @@
+# Alternative to start-demo.ps1. Paste commands one at a time into PowerShell.
+# Replace these two placeholders with the endpoint and namespace from Cloud > Connect.
+$env:TEMPORAL_ADDRESS = 'your-api-key-endpoint:7233'
+$env:TEMPORAL_NAMESPACE = 'your-namespace.your-account'
+$env:DEMO_RUN = 'team-demo-01'
+
+$temporalSecure = Read-Host 'Temporal namespace runtime API key' -AsSecureString
+$env:TEMPORAL_API_KEY = ([System.Net.NetworkCredential]::new('', $temporalSecure)).Password
+$temporalSecure.Dispose()
+Remove-Variable temporalSecure
+
+dotnet restore .\src\Showcase\Showcase.csproj
+dotnet run --project .\src\Showcase\Showcase.csproj --no-restore
+
+# After stopping the app with Ctrl+C:
+Remove-Item Env:TEMPORAL_API_KEY

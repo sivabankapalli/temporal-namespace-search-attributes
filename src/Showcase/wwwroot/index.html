@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Temporal Search Attributes Lab</title>
+  <link rel="stylesheet" href="styles.css?v=types-v1">
+</head>
+<body>
+  <header class="top"><a class="brand" href="/" aria-label="Search Attributes Lab home"><span class="logo">SA</span><span>SEARCH ATTRIBUTES <small>TEMPORAL CLOUD / .NET</small></span></a><div class="top-right"><span class="status-dot"></span><span id="worker">Checking configuration</span><button class="quiet" id="schemaButton">Inspect namespace definitions</button><button class="quiet" id="recordingButton" aria-pressed="false">Recording view</button></div></header>
+  <main>
+    <section class="hero"><div><div class="eyebrow">SEVEN TYPES. ONE SEARCHABLE WORKFLOW.</div><h1>Choose a type.<br><span>See what matches.</span></h1><p>Understand its purpose, follow the .NET assignment,<br>then inspect the values returned by Temporal.</p><div class="concept"><span>Namespace defines <b>name + type</b></span><span>SDK supplies <b>execution values</b></span><span>Visibility finds <b>matching workflows</b></span></div></div><aside class="launch"><div class="eyebrow">TARGET NAMESPACE</div><strong id="namespace">Namespace not configured</strong><p id="run">Loading demo run</p><a id="cloudNamespace" class="link" target="_blank" rel="noopener" hidden>Open namespace in Temporal Cloud</a><button id="seedButton" class="primary">Start 10 test executions</button><p class="small">Creates real workflows with synthetic metadata. Existing IDs are skipped.</p></aside></section>
+    <div id="notice" role="status" aria-live="polite" class="notice">Start the app with start-demo.ps1, then create the test executions.</div>
+    <p id="recordingContext" class="recording-context" hidden></p>
+    <section class="type-strip" id="types" aria-label="Choose a Search Attribute type"></section>
+    <section class="workspace"><aside class="scenario-pane"><div class="pane-title"><span class="eyebrow">TYPE EXAMPLES</span><span id="exampleCount"></span></div><nav id="examples" aria-label="Type examples"></nav><details class="advanced"><summary>More filters and transitions</summary><div id="scenarios"></div></details><button id="verifyButton" class="quiet full">Check fresh-run baseline</button><p class="small sidebar-note">Baseline counts describe a fresh run before values are changed.</p></aside>
+      <div class="results-pane"><section class="question"><div class="eyebrow" id="audience">TYPE EXPLORER</div><h2 id="question">Choose a type to begin</h2><p id="lesson"></p>
+        <div id="examplePanel" class="example-panel" hidden><div class="definition"><div><span class="field-label">REGISTERED NAME / TYPE</span><strong id="attributeLabel"></strong></div><div><span class="field-label">ILLUSTRATIVE VALUE (NOT A LIVE RESULT)</span><code id="exampleValue"></code></div></div><div class="sdk-grid"><div><span class="field-label">1. DECLARE THE .NET KEY</span><pre><code id="sdkDeclaration"></code></pre></div><div><span class="field-label">2. ASSIGN A VALUE IN AtStart</span><pre><code id="sdkAssignment"></code></pre></div></div><p id="sourceReference" class="source-reference"></p><div id="caution" class="callout"></div></div>
+        <div class="query-header"><label for="query">3. RUN A TEMPORAL VISIBILITY FILTER</label><button class="text-button" id="copyButton" disabled>Copy exact query for Cloud UI</button></div><textarea id="query" rows="2" spellcheck="false" aria-label="Temporal Visibility filter"></textarea><div class="query-actions"><button class="primary compact" id="searchButton">Run live search</button><label class="live"><input type="checkbox" id="live"> Refresh every 5 seconds</label><span id="expected" class="muted"></span></div><details class="scope"><summary>Exact query sent to Temporal</summary><code id="scopedQuery">No query has completed yet.</code><p>The run prefix scopes this recording. It is a filter, not an access-control boundary.</p></details></section>
+        <div class="result-header"><div><div class="eyebrow">4. INSPECT LIVE RETURNED VALUES</div><h3><span id="matchCount">-</span> returned workflows</h3></div><div class="result-status"><span id="baselineStatus" class="baseline-status">No comparison yet</span><span id="fetched" class="muted">No search yet</span></div></div><div class="table-wrap"><table><thead><tr><th>Workflow / reference</th><th id="valueHeading">Attribute value from Temporal</th><th>Execution status</th><th></th></tr></thead><tbody id="rows"><tr><td colspan="4" class="empty">Select a type to request real Temporal results.</td></tr></tbody></table></div><div id="countNote" class="table-note">Expected counts are teaching references. Returned rows always come from the connected Temporal namespace.</div>
+      </div>
+    </section>
+    <footer><span>REAL TEMPORAL SDK / SYNTHETIC METADATA / LOCAL DEMO</span><span>Define in the namespace. Set with the SDK. Search through Visibility.</span></footer>
+  </main>
+  <dialog id="detailDialog"><div class="dialog-head"><div><div class="eyebrow">ONE EXECUTION / ACTUAL METADATA</div><h2 id="detailTitle"></h2></div><button class="close" data-close="detailDialog" aria-label="Close details">x</button></div><div id="detailContent"></div></dialog>
+  <dialog id="infoDialog"><div class="dialog-head"><div><div class="eyebrow">NAMESPACE DEFINITIONS / BASELINE CHECKS</div><h2 id="infoTitle"></h2></div><button class="close" data-close="infoDialog" aria-label="Close information">x</button></div><div id="infoContent"></div></dialog>
+  <script src="app.js?v=types-v1"></script>
+</body>
+</html>

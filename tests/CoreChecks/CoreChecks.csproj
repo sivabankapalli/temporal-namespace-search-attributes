@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../src/Showcase/Core/DemoData.cs" Link="DemoData.cs" />
+    <Compile Include="../../src/Showcase/Core/CloudNamespaceSchema.cs" Link="CloudNamespaceSchema.cs" />
+    <Compile Include="../../src/Showcase/Core/TypeExamples.cs" Link="TypeExamples.cs" />
+  </ItemGroup>
+</Project>
